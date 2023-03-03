@@ -4,26 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap"
       rel="stylesheet"
     />
-    <script src="script.js" defer></script>
     <title>Weather App</title>
   </head>
   <body>
     <div id="AppWrapper">
       <div class="AppContainer">
-        <form action="">
+        <form action="" method="post" class="searchForm" id="searchForm">
           <label for="city" class="searchBar">
-            <input type="text" name="" id="city" class="searchInput" />
-            <button class="searchBtn">
+            <input type="text" name="location" id="city" class="searchInput" />
+            <button class="searchBtn" type="submit">
               <img
-                src="images/search_icon.svg"
+                src="/src/images/search_icon.svg"
                 alt="search"
                 class="searchImg"
               />
@@ -53,42 +50,22 @@
             <div id="detailsWindow" class="weatherWindows">Details</div>
             <div id="forecastWindow" class="weatherWindows">Forecast</div>
             <ul class="tabsList">
-              <li class="tabgit" data-option="#nowWindow">Now</li>
+              <li class="tab" data-option="#nowWindow">Now</li>
               <li class="tab" data-option="#detailsWindow">Details</li>
               <li class="tab" data-option="#forecastWindow">Forecast</li>
             </ul>
           </div>
           <div class="citiesWindow">
             <div class="addedLocations">Added Locations</div>
-            <ul class="favoriteLocationsList">
-              <li class="favoriteLocation">
-                <button class="favoriteLocationBtn">Aktobe</button>
-              </li>
-              <li class="favoriteLocation">
-                <button class="favoriteLocationBtn">Aktobe</button>
-              </li>
-              <li class="favoriteLocation">
-                <button class="favoriteLocationBtn">Aktobe</button>
-              </li>
-              <li class="favoriteLocation">
-                <button class="favoriteLocationBtn">Aktobe</button>
-              </li>
-              <li class="favoriteLocation">
-                <button class="favoriteLocationBtn">Aktobe</button>
-              </li>
-            </ul>
+            <ul class="favoriteLocationsList"></ul>
           </div>
         </div>
       </div>
     </div>
     <div id="CityIMG">
-      <span class="selectedLocation"></span> views
+      <span class="selectedLocation">LOCATION</span>
       <ul class="cityPictures">
-        <li class="cityImage"><img src="" alt="City Image" /></li>
-        <li class="cityImage"><img src="" alt="City Image" /></li>
-        <li class="cityImage"><img src="" alt="City Image" /></li>
-        <li class="cityImage"><img src="" alt="City Image" /></li>
-        <li class="cityImage"><img src="" alt="City Image" /></li>
+        PICTURES SLIDER
       </ul>
     </div>
   </body>

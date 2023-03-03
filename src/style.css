@@ -1,25 +1,27 @@
 body {
-  background-color: black;
+  background-color: aliceblue;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 #AppWrapper {
   background-color: aliceblue;
-  flex-grow: 1;
-  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
 }
 #CityIMG {
   background-color: blueviolet;
-  flex-grow: 5;
+  width: 100%;
+  height: 50%;
 }
 .AppContainer {
-  margin: 40% 2% auto 6%;
   background-color: bisque;
   box-sizing: border-box;
   width: 600px;
   height: 435px;
   border: 1px solid #000000;
-  position: relative;
+  align-self: center;
 }
 
 .searchBar {
@@ -38,6 +40,7 @@ body {
   all: unset;
 }
 .searchImg {
+  cursor: pointer;
 }
 
 .interface {
