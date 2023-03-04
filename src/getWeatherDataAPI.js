@@ -1,7 +1,7 @@
 import { myAPIkey } from ".";
-import { sortCurrentCity } from "./sort_city_object";
+import { filterCurrentCity } from "./filter_city_object";
 
-export function getWeatherData() {
+export function getWeatherData(renderNowWeather) {
   let location = searchForm.location.value;
   searchForm.location.value = "";
   fetch(
@@ -14,10 +14,9 @@ export function getWeatherData() {
       throw new Error("You've probably misspelled the city! Try again!");
     })
     .then((cityData) => {
-      sortCurrentCity(cityData);
+      renderNowWeather(filterCurrentCity(cityData));
     })
     .catch((error) => {
-      "You've probably misspelled the city! Try again!";
       console.log(error);
     });
 }

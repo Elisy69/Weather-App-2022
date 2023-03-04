@@ -73,6 +73,10 @@ body {
   flex-grow: 1;
   justify-content: center;
 }
+.weatherImg {
+  height: 10rem;
+  width: 10rem;
+}
 .nowCity {
   display: flex;
   justify-content: space-between;
