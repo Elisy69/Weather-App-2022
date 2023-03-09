@@ -1,7 +1,6 @@
 body {
   background-color: aliceblue;
-  display: flex;
-  flex-direction: column;
+  margin-top: 130px;
 }
 #AppWrapper {
   background-color: aliceblue;
@@ -101,7 +100,7 @@ body {
   width: 0;
 }
 
-.addToFavoriteBtnActive {
+.addToFavoriteBtn {
   display: block;
   top: 0;
   left: 0;
@@ -109,11 +108,10 @@ body {
   width: 24px;
   background-image: url(images/like_icon.svg);
 }
-.addToFavoriteBtn:hover input ~ .addToFavoriteBtnActive {
+.addToFavoriteBtn:hover {
   background-image: url(images/like_icon_red.svg);
 }
-
-.addToFavoriteBtn input:checked ~ .addToFavoriteBtnActive {
+.activeHeart {
   background-image: url(images/like_icon_darkred.svg);
 }
 
@@ -173,6 +171,20 @@ body {
 .favoriteLocationsList {
   height: 360px;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.favoriteLocationWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-right: 5px;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+.favoriteLocationWrapper:hover {
+  background-color: rgba(0, 0, 0, 0.093);
+  border-radius: 1.2rem;
 }
 .favoriteLocation {
   font-family: "Roboto";
@@ -181,8 +193,17 @@ body {
   font-size: 24px;
   padding: 5px;
 }
+.favoriteLocation:hover {
+  color: green;
+  cursor: pointer;
+}
 .favoriteLocationBtn {
   all: unset;
+}
+.favoriteLocationBtn:hover {
+  color: red;
+  cursor: pointer;
+  text-shadow: 0px 0px 1px red;
 }
 
 .weatherWindows {
@@ -197,4 +218,148 @@ body {
 .pressed {
   background-color: #000000;
   color: aliceblue;
+}
+
+.weatherWindows#detailsWindow.active {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px 10px 20px;
+}
+
+.cityNameDetails {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  padding-bottom: 15px;
+}
+
+span.cityNameDetails ~ span {
+  padding-top: 5px;
+  font-size: 1.7rem;
+}
+
+.defaultDetails {
+  font-size: 2rem;
+  padding-top: 70px;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#overlay {
+  position: absolute;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  width: 300px;
+  height: 347px;
+  background-color: rgba(0, 0, 0, 0.84);
+  padding-top: 80px;
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.galleryWrapepr {
+  display: flex;
+  position: relative;
+}
+
+.galleryImage {
+  display: none;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  border-radius: 3rem;
+  width: 350px;
+  height: 350px;
+  object-fit: none;
+}
+.galleryActive {
+  display: block;
+}
+
+.rightArrow {
+  position: absolute;
+  left: 260px;
+  top: 160px;
+  font-size: 1.5rem;
+  color: rgb(251, 251, 251);
+  background-color: #0000008f;
+  border-radius: 2rem;
+  padding-left: 5px;
+  padding-top: 2px;
+}
+
+.rightArrow:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: rgba(61, 61, 61, 0.293);
+}
+
+.leftArrow {
+  position: absolute;
+  left: 14px;
+  top: 160px;
+  font-size: 1.5rem;
+  color: rgb(251, 251, 251);
+  background-color: #0000008f;
+  border-radius: 2rem;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+
+.leftArrow:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: rgba(61, 61, 61, 0.293);
+}
+
+.defaultPictures {
+  font-size: 2rem;
+  padding-top: 88px;
+  padding-left: 20px;
 }

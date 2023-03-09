@@ -8,7 +8,8 @@ export const CurrentCity = function (
   weather,
   sunrise,
   sunset,
-  icon
+  icon,
+  favoriteStatus
 ) {
   this.city = city;
   this.temp = Math.round(convert(Number(temp), "kelvin").to("celsius"));
@@ -19,4 +20,5 @@ export const CurrentCity = function (
   this.sunrise = format(new Date(sunrise), "HH:mm");
   this.sunset = format(new Date(sunset), "HH:mm");
   this.icon = icon;
+  this.favoriteStatus = favoriteStatus;
 };

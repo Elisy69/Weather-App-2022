@@ -6,14 +6,14 @@ export const createElement = ({
   text,
   id,
   value,
+  src,
 }) => {
-  console.log(domLocation);
-
   const el = document.createElement(element);
   domLocation[insertionMethod](el);
   el.classList.add(whatClass);
   el.textContent = text;
   el.id = id;
   el.value = value;
+  el.src = src;
   return el;
 };

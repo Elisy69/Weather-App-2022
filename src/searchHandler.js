@@ -1,12 +1,12 @@
-import { renderWeather } from "./create_weather_in_DOM";
+import { renderWeather } from "./renderWeather";
 import { getWeatherData } from "./getWeatherDataAPI";
 
 const inputText = document.querySelector(".searchInput");
-
 const searchBtn = document.querySelector(".searchImg");
+const form = document.querySelector(".searchForm");
 
 export function searchHandler() {
-  searchBtn.addEventListener("click", (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
     getWeatherData(renderWeather);
   });

@@ -1,7 +1,6 @@
 import { CurrentCity } from "./sortedCityFactory";
 
 export function filterCurrentCity(cityData) {
-  console.log(cityData);
   let filteredCityData = new CurrentCity(
     cityData.name,
     cityData.main.temp,
